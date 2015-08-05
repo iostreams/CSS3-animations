@@ -1,0 +1,94 @@
+/* Chrome, Safari, Opera 15.0 */
+@-webkit-keyframes bg {
+    0%   {background-color: white;}
+    50%  {background-color: black;}
+    100% {background-color: white;}
+}
+
+/* Firefox 16.0, MSIE 10 */
+@keyframes bg {
+    0%   {background-color: white;}
+    50%  {background-color: black;}
+    100% {background-color: white;}
+}
+
+@-webkit-keyframes spin {
+    from { -webkit-transform: rotate(0deg); transform: rotate(0deg); }
+    to   { -webkit-transform: rotate(360deg); transform: rotate(360deg); }
+}
+
+@keyframes spin {
+    from { -webkit-transform: rotate(0deg); transform: rotate(0deg); }
+    to   { -webkit-transform: rotate(360deg); transform: rotate(360deg); }
+}
+
+@-webkit-keyframes move {
+    0%   { top: 0; left: 0}
+    25%  { top: 15em; left: 0}
+    50%  { top: 15em; left: 15em}
+    75%  { top: 0; left: 15em}
+    100% { top: 0; left: 0}
+}
+
+@keyframes move {
+    0%   { top: 0; left: 0}
+    25%  { top: 15em; left: 0}
+    50%  { top: 15em; left: 15em}
+    75%  { top: 0; left: 15em}
+    100% { top: 0; left: 0}
+}
+
+body {
+    padding-top: 4em;
+    -webkit-animation-name: bg;
+    animation-name: bg;
+    -webkit-animation-duration: 10s;
+    animation-duration: 10s;
+    -webkit-animation-iteration-count: 3;
+    animation-iteration-count: 3;
+    -webkit-animation-timing-function: linear;
+    animation-timing-function: linear;
+}
+
+#square {
+    margin: 0 auto;
+    position: relative;
+    height: 20em;
+    width: 20em;
+    border: 1px solid black;
+    -webkit-animation-name: spin;
+    animation-name: spin;
+    -webkit-animation-duration: 16s;
+    animation-duration: 16s;
+    -webkit-animation-iteration-count: infinite;
+    animation-iteration-count: infinite;
+    -webkit-animation-timing-function: linear;
+    animation-timing-function: linear;
+    background-color: white;
+    cursor: pointer;
+}
+
+#square:hover {
+    -webkit-animation-play-state: paused;
+    animation-play-state: paused;
+}
+
+#circle {
+    border-radius: 50%;
+    width: 5em;
+    height: 5em;
+    border: 1px solid #ffff00;
+    background-color: green; /* fallback color if gradients are not supported */
+    background-image: -webkit-linear-gradient(left, red, green, blue, violet); /* Chrome 10, Safari 5.1 */
+    background-image: -o-linear-gradient(left, red, green, blue, violet); /* Opera 11.1 */
+    background-image: linear-gradient(to right, red, green, blue, violet); /* MSIE 10, Chrome 26, Firefox 16, Safari 6.1, Opera 12.1 */
+    position: absolute;
+    -webkit-animation-name: move;
+    animation-name: move;
+    -webkit-animation-duration: 4s;
+    animation-duration: 4s;
+    -webkit-animation-iteration-count: infinite;
+    animation-iteration-count: infinite;
+    -webkit-animation-timing-function: linear;
+    animation-timing-function: linear;
+}
